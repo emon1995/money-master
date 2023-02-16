@@ -22,7 +22,7 @@
   <body>
     <!-- HEADER SECTION -->
     <header>
-      <div class="navbar bg-base-100 px-12 shadow-2xl">
+      <div class="navbar bg-base-100 lg:px-12 shadow-2xl">
         <div class="flex-1">
           <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
         </div>
@@ -85,13 +85,13 @@
     </header>
     <!-- MAIN SECTION -->
     <main>
-      <section class="px-12 mt-12 flex gap-8">
+      <section class="lg:px-12 px-4 mt-12 flex gap-8">
         <!-- MONEY IMAGE -->
-        <div class="w-[60%]">
+        <div class="w-[60%] hidden lg:block">
           <img src="https://picsum.photos/800" alt="money-master" />
         </div>
         <!-- MONEY DETAILS -->
-        <div class="bg-blue-500 w-[40%]">
+        <div class="bg-blue-500 w-full lg:w-[40%] pb-12">
           <h1 class="text-3xl text-center pt-8 font-bold">Income</h1>
           <div class="flex flex-col justify-center items-center">
             <!-- INCOME -->
@@ -102,7 +102,7 @@
                   id="income"
                   type="text"
                   placeholder="Enter amount"
-                  class="input input-bordered"
+                  class="input w-[75%] input-bordered inpurt-sm"
                 />
                 <span>USD</span>
               </label>
@@ -116,7 +116,7 @@
                   id="food"
                   type="text"
                   placeholder="Enter amount"
-                  class="input input-bordered"
+                  class="input input w-[75%] input-bordered"
                 />
                 <span>USD</span>
               </label>
@@ -128,19 +128,19 @@
                   id="rent"
                   type="text"
                   placeholder="Enter amount"
-                  class="input input-bordered"
+                  class="input input w-[75%] input-bordered"
                 />
                 <span>USD</span>
               </label>
             </div>
-            <div class="form-control pt-4 mr-8">
+            <div class="form-control pt-4 lg:mr-8">
               <label class="input-group">
                 <span>Clothes</span>
                 <input
                   id="clothes"
                   type="text"
                   placeholder="Enter amount"
-                  class="input input-bordered"
+                  class="input input w-[75%] input-bordered"
                 />
                 <span>USD</span>
               </label>
@@ -149,7 +149,9 @@
               Calculate
             </button>
             <!-- TOTAL EXPENSES -->
-            <div class="stats shadow mt-4">
+            <div
+              class="stats shadow mt-4 flex flex-col md:flex-row lg:flex-row"
+            >
               <div class="stat">
                 <div class="stat-figure text-secondary">
                   <svg
@@ -200,14 +202,16 @@
                   id="save"
                   type="text"
                   placeholder="Saving %"
-                  class="input input-bordered"
+                  class="input w-[75%] input-bordered"
                 />
                 <button id="save-btn" class="btn btn-info">Save</button>
               </label>
             </div>
             <!-- SAVING & BALANCE -->
-            <div class="stats shadow mt-4">
-              <div class="stat">
+            <div
+              class="stats shadow mt-4 flex flex-col md:flex-row lg:flex-row"
+            >
+              <div class="stat w-full">
                 <div class="stat-figure text-secondary">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
