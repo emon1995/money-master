@@ -1,4 +1,4 @@
-let balance;
+let balance = 0;
 const alerts = document.getElementById("alert");
 const text = document.getElementById("text");
 // calculate
@@ -37,7 +37,8 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 // save
 document.getElementById("save-btn").addEventListener("click", function () {
   const save = getIdByValue("save");
-  if (balance === "") {
+  // console.log("🚀 ~ file: app.js:41 ~ balance", balance);
+  if (balance === 0) {
     text.innerText = "Please enter a income balance";
     alerts.style.display = "block";
   } else {
