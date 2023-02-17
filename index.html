@@ -84,7 +84,38 @@
       </div>
     </header>
     <!-- MAIN SECTION -->
-    <main>
+    <main class="relative">
+      <!-- ALERT SECTION -->
+      <section
+        class="mt-12 w-full md:w-[45%] lg:w-[45%] mx-auto absolute right-0 -top-20"
+      >
+        <div id="alert" class="alert alert-warning shadow-lg hidden">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="stroke-current flex-shrink-0 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+              />
+            </svg>
+            <span id="text" class="">Warning: Invalid email address!</span>
+            <!-- <div class="flex justify-between items-center">
+              <span
+                class="cursor-pointer ml-96 text-3xl hover:bg-red-500 p-2 rounded-full"
+                id="close"
+                >&times;</span
+              >
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <!-- INCOME SECTION -->
       <section class="lg:px-12 px-4 mt-12 flex gap-8">
         <!-- MONEY IMAGE -->
         <div class="w-[60%] hidden lg:block">
@@ -260,6 +291,7 @@
       </section>
     </main>
     <!-- JS FILE -->
+    <script src="./js/alert.js"></script>
     <script src="./js/app.js"></script>
   </body>
 </html>
