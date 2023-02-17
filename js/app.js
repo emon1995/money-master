@@ -21,8 +21,10 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
       const total = getTotalCalculate(food, rent, clothes);
       if (income > total) {
         balance = income - total;
+        // console.log("🚀 ~ file: app.js:24 ~ balance", balance);
         innerTextSet("total-expenses", total);
         innerTextSet("balance", balance);
+        alerts.style.display = "none";
       } else {
         // alert("Your account balance is low");
         text.innerText = "Your account balance is low";
@@ -35,27 +37,33 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 // save
 document.getElementById("save-btn").addEventListener("click", function () {
   const save = getIdByValue("save");
-  if (save === "") {
-    // alert("Please enter a amount");
-    text.innerText = "Please enter a amount";
-    alerts.style.display = "block";
-  } else if (isNaN(save)) {
-    // alert("Please enter number of amount");
-    text.innerText = "Please enter number of amount";
+  if (balance === "") {
+    text.innerText = "Please enter a income balance";
     alerts.style.display = "block";
   } else {
-    const income = getIdByValue("income");
-    //  balance = getIdByValue("balance");
-    const savingAmount = parseInt(income) * (parseInt(save) / 100);
-
-    if (balance > savingAmount) {
-      const remainingBalance = balance - savingAmount;
-      innerTextSet("saving-amount", savingAmount);
-      innerTextSet("remaining-balance", remainingBalance);
-    } else {
-      // alert("Amount is very low!!!!");
-      text.innerText = "Amount is very low!!!!";
+    if (save === "") {
+      // alert("Please enter a amount");
+      text.innerText = "Please enter a amount";
       alerts.style.display = "block";
+    } else if (isNaN(save)) {
+      // alert("Please enter number of amount");
+      text.innerText = "Please enter number of amount";
+      alerts.style.display = "block";
+    } else {
+      const income = getIdByValue("income");
+      //  balance = getIdByValue("balance");
+      const savingAmount = parseInt(income) * (parseInt(save) / 100);
+
+      if (balance > savingAmount) {
+        const remainingBalance = balance - savingAmount;
+        innerTextSet("saving-amount", savingAmount);
+        innerTextSet("remaining-balance", remainingBalance);
+        alerts.style.display = "none";
+      } else {
+        // alert("Amount is very low!!!!");
+        text.innerText = "Amount is very low!!!!";
+        alerts.style.display = "block";
+      }
     }
   }
 });
